@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  if(isset($_SESSION["name"]))
+  {
+    $logged = true;
+  }
+  else
+  {
+    $logged = false;
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>

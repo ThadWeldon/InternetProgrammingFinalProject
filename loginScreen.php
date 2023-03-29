@@ -17,8 +17,11 @@
 
         $logo1 = "2.png";
         $title = "employee login";
+        $logged = false;
 
-        pageHead1($logo1, $title);
+        pageHead1($logo1, $title, $logged);
+        if(isset($_GET['msg']))
+        echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
 
     ?>
     <div class="container">
