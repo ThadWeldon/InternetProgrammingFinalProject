@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  if(isset($_SESSION["name"]))
+  {
+    $logged = true;
+  }
+  else
+  {
+    $logged = false;
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +24,7 @@
         $logo1 = "2.png";
         $title = "Home";
 
-        pageHead1($logo1, $title);
+        pageHead1($logo1, $title, $logged);
 
     ?>
     Admin page Underconstruction

@@ -1,5 +1,5 @@
 <?php
-	function pageHead1($img, $title)
+	function pageHead1($img, $title, $logged)
 	{
         echo "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">";
         echo "<img class=\"img-thumbnail\" src=\"./images/$img\" alt=\"$title\" width=\"200\" height=\"100\">";
@@ -17,7 +17,6 @@
   </div>
 </nav>
 _END;
-
 }
 
 ?>
