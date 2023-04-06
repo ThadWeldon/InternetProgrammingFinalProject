@@ -82,12 +82,12 @@
                         <label for="employeeID">Employee to Assign to Job: </label>
                         <input type="employeeID" class="form-control" id="employeeID" placeholder="Employee ID" name="employeeID">
                     </div>
-                        <label for="Date">Start Date</label>
-                        <input type="Date" class="form-control" id="startDate" aria-describedby="startDate" placeholder="Date Assigned" name="startDate">
+                        <label for="date">Start Date</label>
+                        <input type="date" class="form-control" id="startDate" aria-describedby="startDate" placeholder="Date Assigned" name="startDate">
                     </div>
                     <div>
-                        <label for="Date">End Date</label>
-                        <input type="Date" class="form-control" id="endDate" aria-describedby="endDate" placeholder="End Date" name="endDate">
+                        <label for="date">End Date</label>
+                        <input type="date" class="form-control" id="endDate" aria-describedby="endDate" placeholder="End Date" name="endDate">
                     </div>
                     <button type="submit" class="btn btn-dark">Assign Job</button>
                 </form>
