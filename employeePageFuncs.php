@@ -18,7 +18,7 @@
             Your Schedule
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="yourOrders.php">Todays Schedule</a></li>
+            <li><a class="dropdown-item" href="employeeDailyTasks.php">Todays Schedule</a></li>
             <li><a class="dropdown-item" href="yourOrders.php">Weekly Schedule</a></li>
           </ul>
         </li>
