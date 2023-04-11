@@ -38,9 +38,6 @@
       </div>
       <button type="submit" class="btn btn-dark">Submit</button>
     </form>
-    <div class="link">
-    <a href="createEmployeeAccount.php">Create New Employee Account</a>
-</div>
 
 <style>
 a:hover {
