@@ -51,9 +51,6 @@
       <button type="submit" class="btn btn-dark">Create Account</button>
     </form>
 
-    <div class = "link">
-        <a href="loginScreen.php">Already Have an Account</a>
-    </div>
   </div>
 
 

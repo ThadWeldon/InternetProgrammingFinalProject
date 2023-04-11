@@ -19,6 +19,9 @@ if($logged == true)
         <li class="nav-item">
           <a class="nav-link" href="assignTasks.php">Assign Tasks</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="createEmployeeAccount.php">Create Employee</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Employees Tasks
