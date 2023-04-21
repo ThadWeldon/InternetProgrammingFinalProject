@@ -30,7 +30,8 @@
         ?>
         <h3>
             <?php
-                echo "Today is " . date("l") . " " . date("Y-m-d") . "<br>";
+                date_default_timezone_set('US/Eastern');
+                echo "Today is " . date("l") . " " . date("m-d-Y") . "<br>";
             ?>
         </h3>
 

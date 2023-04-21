@@ -1,0 +1,89 @@
+.myForm {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: #f1eef5;
+    width: 40em;
+    padding: 1em;
+    border: 1px solid #ffffff;
+    background-color: #0d1527;
+    position: center;
+}
+
+.myForm * {
+    box-sizing: border-box;
+}
+
+.myForm fieldset {
+    border: none;
+    padding: 0;
+}
+
+.myForm legend,
+.myForm label {
+    padding: 6px;
+    font-weight: 500;
+}
+
+.myForm label.choice {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.myForm label {
+    text-align: left;
+    display: inline-block;
+}
+
+.myForm input[type="text"],
+.myForm input[type="date"],
+.myForm select,
+.myForm textarea {
+    float: right;
+    width: 70%;
+    border: 1px solid #2404b4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    padding: 0.3em;
+}
+
+.myForm textarea {
+    height: 150px;
+}
+
+.myForm button {
+    padding: 1em;
+    border-radius: 0.5em;
+    background: #02034e;
+    border: none;
+    font-weight: bold;
+    margin-left: 20%;
+    margin-top: 1.8em;
+}
+
+.myForm button:hover {
+    background: #000000;
+    cursor: pointer;
+}
+
+.myForm input[type=submit] {
+    padding: 1em;
+    background-color: #000000;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 35%;
+    margin-top: 1em;
+}
+
+.myForm input[type=submit]:hover {
+    background-color: #b3d3ea;
+    color: #3200bb;
+    cursor: pointer;
+}
+.form{
+    position: center;
+}
+
