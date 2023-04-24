@@ -28,8 +28,27 @@
         pageHead1($logo1, $title, $logged);
         if(isset($_GET['msg']))
           echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
+
+          date_default_timezone_set('US/Eastern');
+
+          $timestamp = time(); // Use the current time, or replace with your own timestamp
+          $currentDate = date('Y-m-d H:i:s', strtotime("today", $timestamp));
     ?>
+
+<div class="container">
+  <form action ="<?php echo $_SERVER['PHP_SELF'];?>" method = "post">
+    <div class="form-group">
+    <div class="form-group">
+      <label for="date">Choose Date</label>
+      <input type="date" class="form-control" id="date" placeholder="Choose Date" name="date" value = "<?php echo $currentDate; ?>">
+    </div>
+    <button type="submit" class="btn btn-dark">Search Date</button>
+  </form>
+</div>
+    
     <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
         require_once 'dbFunc.php';
         $employee = $_SESSION["name"];
 
@@ -38,8 +57,9 @@
         //$currentDate = $getTodaysDate->format('Y-m-d H:i:s');
 
         $timestamp = time(); // Use the current time, or replace with your own timestamp
-        $currentDate = date('Y-m-d H:i:s', strtotime("today", $timestamp));
-        $end_of_day = date('Y-m-d H:i:s', strtotime("tomorrow", $timestamp) - 1);
+        //$currentDate = date('Y-m-d H:i:s', strtotime("today", $timestamp));
+        //$end_of_day = date('Y-m-d H:i:s', strtotime("tomorrow", $timestamp) - 1);
+        $currentDate = $_POST["date"];
 
         $conn = connectDB();
 
@@ -53,12 +73,12 @@
             echo "0 results";
         }
 
-        $sql = "SELECT jobs.jobTitle, jobs.customerPhoneNumber, jobs.location, jobs.customerName FROM employee INNER JOIN jobs ON employee.employeeID=jobs.employeeOnTask WHERE employeeID = \"$empID\" AND \"$currentDate\" BETWEEN employeeStartDate AND employeeEndDate;";
-
+        $sql = "SELECT jobs.jobID, jobs.jobTitle, jobs.customerPhoneNumber, jobs.location, jobs.customerName FROM employee INNER JOIN jobs ON employee.employeeID=jobs.employeeOnTask WHERE employeeID = \"$empID\" AND \"$currentDate\" BETWEEN employeeStartDate AND employeeEndDate;";
+        echo $currentDate . "<br>";
         $result = mysqli_query($conn, $sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                echo $row["jobTitle"] . " ". $row["customerName"] . " ". $row['customerPhoneNumber']. " ". $row['location']."<br>";
+                echo $row["jobID"] . " " . $row["jobTitle"] . " ". $row["customerName"] . " ". $row['customerPhoneNumber']. " ". $row['location']."<br>";
             }
             echo "<br>";
         } else {
@@ -66,6 +86,7 @@
         }
 
         $conn->close();
+      }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
