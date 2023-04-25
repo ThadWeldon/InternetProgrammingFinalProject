@@ -21,12 +21,12 @@
     <body>
         <?php
             require_once 'adminPageFuncs.php';
-            require_once 'dbfunc.php';
+            require_once 'dbFunc.php';
             $logo1 = "2.png";
             $title = "Home";
+    
             pageHead1($logo1, $title, $logged);
-            if(isset($_GET['msg']))
-                echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
+
         ?>
         <h3>
             <?php

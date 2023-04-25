@@ -22,12 +22,11 @@
     <body>
         <?php
             require_once 'adminPageFuncs.php';
-            require_once 'dbfunc.php';
+            require_once 'dbFunc.php';
             $logo1 = "2.png";
             $title = "Home";
+    
             pageHead1($logo1, $title, $logged);
-            if(isset($_GET['msg']))
-                echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
         ?>
         <?php
             $conn = connectDB();
@@ -74,7 +73,7 @@
 
 
             <label for="edit-id">Choose a Ticket<span class="form-required" title="This field is required."></span></label>
-            <select name="id" required />
+            <select name="id" required>
             <option value="" selected="selected">- Select: ID - Customer Name - Location - Open Date - Close Date</option>
             <?php
             foreach ($ticket_names_jd as $i => $item) {
