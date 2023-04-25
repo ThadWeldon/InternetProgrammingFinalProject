@@ -1,11 +1,3 @@
-<!--
-    1) get id from edittasks selector
-    2) sql query to get all information
-    3) store information in an array
-    4) create a form with all information from the array
-    5) create a submit button that will update the information from the form
- -->
-
  <?php
   session_start();
   if(isset($_SESSION["name"]))

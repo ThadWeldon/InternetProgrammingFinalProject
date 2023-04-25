@@ -6,6 +6,13 @@
         $pwd="PhpUser@1234";
         $db="vinceweldonelectric";
 
+        
+        /*$hn="localhost";
+        $un="u721040828_weldonelectric";
+        $pwd="Braves2019!";
+        $db="u721040828_weldonelectric";*/
+        
+
 
         $conn=new mysqli($hn, $un, $pwd, $db);
         if($conn->connect_error) die("Fatal Error");
