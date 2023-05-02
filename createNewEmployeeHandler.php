@@ -11,7 +11,7 @@
 	$sql = "INSERT INTO `employee`(`employeeID`, `employeeFirstName`, `employeeLastName`, `employeeEmail`, `employeePhoneNumber`, `employeePassword`) VALUES (NULL,\"$firstName\",\"$lastName\", \"$email\",\"$number\",SHA1(\"$pwd\"));";
 
 	if ($conn->query($sql) === TRUE) {
-	 	header('Location: ./index.php');
+	 	header('Location: ./adminHome.php');
 	} else {
 		header('Location: ./createEmployeeAccount.php?msg=Please Try Again');
 	}

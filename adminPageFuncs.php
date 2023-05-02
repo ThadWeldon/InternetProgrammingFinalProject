@@ -30,8 +30,7 @@
                 Employees Tasks
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="allEmployeesDailyTasks.php">Todays Emoployees Tasks</a></li>
-                <li><a class="dropdown-item" href="chooseDailyTasks.php">Dailey Tasks</a></li>
+                <li><a class="dropdown-item" href="allEmployeesDailyTasks.php">Todays Employees Tasks</a></li>
               </ul>
             </li>
             <li class="nav-item">

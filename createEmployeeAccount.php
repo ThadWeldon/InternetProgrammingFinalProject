@@ -19,7 +19,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/createEmployeeCSS.css">
-    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/master2.css">
+            <link rel="stylesheet" href="./css/more.css">
+
 
     <title>Create Account</title>
   </head>
@@ -34,19 +36,22 @@
         if(isset($_GET['msg']))
           echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
     ?>
-    <div class="container">
+    <center>
+        <h2>
+            Create Account
+        </h2>
+            <br>
 
     <!-- Login in prompt -->
-
-    <form action ="./createNewEmployeeHandler.php" method = "post">
+    <form class = "myForm" action ="./createNewEmployeeHandler.php" method = "post">
       <div class="form-group">
       <div class="form-group">
         <label for="name">First Name</label>
-        <input type="name" class="form-control" id="firstName" placeholder="firstName" name="firstName">
+        <input type="name" class="form-control" id="firstName" placeholder="First Name" name="firstName">
       </div>
       <div class="form-group">
         <label for="name">Last Name</label>
-        <input type="name" class="form-control" id="lastName" placeholder="lastName" name="lastName">
+        <input type="name" class="form-control" id="lastName" placeholder="Last Name" name="lastName">
       </div>
         <label for="email">Email address</label>
         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
@@ -61,8 +66,10 @@
       </div>
       <button type="submit" class="btn btn-dark">Create Account</button>
     </form>
-
   </div>
+    </center>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

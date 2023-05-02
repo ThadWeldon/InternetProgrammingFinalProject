@@ -15,8 +15,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/master.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/master2.css">
+
   </head>
   <body>
   <?php
@@ -28,8 +29,13 @@
         pageHead1($logo1, $title, $logged);
         if(isset($_GET['msg']))
           echo "<h4 class =\"text-danger\">".$_GET['msg']."</h4>";
+
+          date_default_timezone_set('US/Eastern');
+            $today = date("F j, Y, g:i a");
+            echo "<br>";
+            echo "<center><h3> Welcome, ".$_SESSION["name"]."</h3><br>";
+            echo "<h3>Todays date and time is ".$today."</h3><br></center>";
     ?>
-    Employee page Underconstruction
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>

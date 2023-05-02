@@ -16,7 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/assignTasks.css">
     <title>Assign Tasks</title>
-    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/master2.css">
+    <link rel="stylesheet" href="./css/more.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
   <body>
@@ -35,45 +37,84 @@
                 <h3>
                     Avaliable Jobs to Assign:
                 </h3>
+                <table class="table table-striped table-bordered table-dark">                     
+            <div class="table responsive">
+                <thead>
+                    <tr>
+                    <th>Job ID #</th>
+                    <th>Job Title</th>
+                    <th>Customer Name</th>
+                    <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
-                    //get list of tasks sql 
                     $conn = connectDB();
                     $sqlGetTasks = "SELECT `jobID`,`jobTitle`, `customerName`, `location` FROM `jobs` WHERE `employeeOnTask` IS NULL AND `closeDate` IS NULL;";
                     $result = mysqli_query($conn, $sqlGetTasks);
                     if ($result->num_rows > 0) {
+                        // output data of each row
                         while($row = $result->fetch_assoc()) {
-                            echo $row["jobID"] . " ". $row['jobTitle']. " ". $row['customerName']. " ". $row['location']."<br>";
+                            $count = $count + 1;
+            
+                            echo '<tr>
+                                      <td>' . $row["jobID"] .'</td>
+                                      <td>' . $row["jobTitle"] .'</td>
+                                      <td>' . $row["customerName"] .'</td>
+                                      <td>' . $row["location"] .'</td>
+                                    </tr>';
                         }
-                        echo "<br>";
                     } else {
-                        echo "0 results";
-                    }
-                ?>  
+                               echo "0 results";
+                    } 
+                ?>
+                    </tbody>
+                    </div>
+                </table><br>
             </div>
             <div class="col-sm">
                 <h3>
                     Avaliable Employees:
                 </h3>
+
+                <table class="table table-striped table-bordered table-dark">                     
+            <div class="table responsive">
+                <thead>
+                    <tr>
+                    <th>ID #</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <?php
-                    //get list of tasks sql 
                     $conn = connectDB();
                     $sqlGetEmployees = "SELECT `employeeID`,`employeeFirstName`, `employeeLastName` FROM `employee`";
                     $result = mysqli_query($conn, $sqlGetEmployees);
                     if ($result->num_rows > 0) {
+                        // output data of each row
                         while($row = $result->fetch_assoc()) {
-                            echo $row["employeeID"] . " ". $row['employeeFirstName']. " ". $row['employeeLastName']."<br>";
+                            $count = $count + 1;
+            
+                            echo '<tr>
+                                      <td>' . $row["employeeID"] .'</td>
+                                      <td>' . $row["employeeFirstName"] .'</td>
+                                      <td>' . $row["employeeLastName"] .'</td>
+                                    </tr>';
                         }
-                        echo "<br>";
                     } else {
                         echo "0 results";
-                    }
-                ?>  
+                    } 
+                ?>
+                    </tbody>
+                    </div>
+                </table><br>
             </div>
             <div class="col-sm">
                 <h3>
                     Assign Jobs:
                 </h3>
-                <form action ="./assignTasksHandler.php" method = "post">
+                <form class = "myForm" action ="./assignTasksHandler.php" method = "post">
                     <div class="form-group">
                     <div class="form-group">
                         <label for="jobID">Job to Assign: </label>
