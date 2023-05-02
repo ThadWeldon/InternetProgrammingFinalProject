@@ -1,0 +1,14 @@
+.myForm {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    color: #f1eef5;
+    width: 60em;
+    padding: 1em;
+    border: 1px solid #ffffff;
+    background-color: #0d1527;
+    position: center;
+}
+
+.myForm * {
+    box-sizing: border-box;
+}
